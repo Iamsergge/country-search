@@ -1,13 +1,137 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  font-family:'Nunito Sans', sans-serif;
+
+  background-color: #202D36 ;
+  color: #fff;
+}
+/* Header*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2b3743; 
+  padding: 10px 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+/**/
+img{
+  max-width: 100%;
+}
+.grid{
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 40px;
+  
+
+}
+/*filter*/
+.filter .region-filter {
+  
+}
+.filter .region-filter .select {
+  background-color: #2b3743;
+  color: #fff;
+  font-size: inherit;
+  padding: 12px;
+  width: 200px;
+  border:none;
+  border-radius: 5px;
+
+}
+.filter .form-control {
+  width: 100%;
+
+}
+.filter .form-control input {
+  background-color: #2b3743;
+  outline: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  width: 100%;
+  margin: 0 0 30px;
+
+}
+.filter .form-control input::placeholder {
+  color: #fff;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 20px;
+}
+.grid article {
+ /* box-shadow: 0 10px rgba(32, 45, 54, 0.5);*/
+}
+.grid .details h3 {
+  padding-bottom: 10px;
+}
+.grid .details h4 span {
+  font-weight: 300;
+
+}
+.grid .details h4 {
+  padding-bottom: 5px;
+}
+.grid article img {
+  border-radius: 5px 5px 0 0;
+  height: 250px;
+  width: 100%
+}
+
+.grid .details {
+  background-color: #2b3743;
+  padding: 40px 20px;
+  margin-top: -20px;
+  border-radius: 0 0 5px 5px;
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .filter {
+    flex-direction: row;
+    
+  }
+  .filter .form-control {
+    width: auto;
+  }
+  .filter .form-control input {
+    width: auto;
+    margin: 0;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  body {
+    padding: 50px 100px;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+  }
 }
